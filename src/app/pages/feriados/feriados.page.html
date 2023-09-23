@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>feriados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="secondary">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+          
+          <ion-card *ngIf="datos.length > 0">
+            <ion-card-header>
+
+              <ion-card-subtitle>
+                <span class="text-primary">1</span>
+                <span class="feriado-date">{{datos[0].date}}</span>
+              </ion-card-subtitle>
+              <ion-card-title>{{datos[0].title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="datos.length >0">
+            <ion-card-header>
+              <ion-card-subtitle>
+                <span class="text-primary">{{datos.length}}</span>
+                <span class="feriado-date">{{datos[datos.length - 1]  .date}}</span>
+              </ion-card-subtitle>
+              <ion-card-title>
+                {{datos[datos.length -1].title}}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Awesome content
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
